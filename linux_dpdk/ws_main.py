@@ -2364,7 +2364,7 @@ if march == 'x86_64':
 
 elif march == 'aarch64':
     common_flags_new = common_flags + [
-                       '-march=native',
+                       '-march=armv8-a',
                        #'-mtune=cortex-a72',
                        '-flax-vector-conversions',
                        '-DRTE_ARCH_64',
@@ -2379,7 +2379,7 @@ elif march == 'aarch64':
                        #'-DRTE_COMPILE_TIME_CPUFLAGS=RTE_CPUFLAG_EVTSTRM,RTE_CPUFLAG_NEON,RTE_CPUFLAG_CRC32,RTE_CPUFLAG_AES,RTE_CPUFLAG_PMULL,RTE_CPUFLAG_SHA1,RTE_CPUFLAG_SHA2',
                        ]
     common_flags_old = common_flags + [
-                       '-march=native',
+                       '-march=armv8-a',
                        #'-mtune=cortex-a53',
                        '-DRTE_ARCH_64',
                        '-flax-vector-conversions',
@@ -2893,7 +2893,6 @@ def build_prog (bld, build_obj):
         bp_dpdk = SrcGroups([
                     dpdk_src,
                     dpdk_src_aarch64,
-                    dpdk_src_aarch64_cnxk
                     ])
 
         # software BPF
